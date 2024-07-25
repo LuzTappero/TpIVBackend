@@ -1,16 +1,11 @@
-const errorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res, next) =>{
     console.error(err.stack);
-    if (err.message === 'Product not found') {
-        return res.status(404).json({ message: err.message })
-    }else if (err.message === 'ID is required'){
-        return res.status(400).json({ message: err.message })
-    }else if(err.message === 'Product Name is required'){
-        return res.status(400).json({ message: err.message })
-    }else if (err.message === 'That product name already exists'){
-        return res.status(409).json({ message: err.message })
+    const errorMessages={
+        'Product not found': { status: 404, message: 'Product not found' },
+        'ID is required': {status:400, message: 'ID is required'},
+        'That product name already exists': {status: 409, message: 'That product name already exists'}
     }
-    res.status(500).json({ message: 'Internal Server Error', error: err.message })
+    const errorResponse = errorMessages[err.message] || { status: 500, message: 'Internal Server Error' };
+    res.status(errorResponse.status).json({ message: errorResponse.message });
 }
-
-
 export default errorHandler

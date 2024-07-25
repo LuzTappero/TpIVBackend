@@ -2,7 +2,6 @@ import express from 'express'
 import ProductsController from '../controllers/productController.js'
 import validateProduct from '../middlewares/productValidator.js'
 
-
 const routes= express.Router()
 
 routes.get('/', ProductsController.getAll)

@@ -5,12 +5,11 @@ import errorHandler from './src/middlewares/errorHandler.js'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
 
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+
 app.use(morgan("dev"))
 dotenv.config()
-
 
 app.use('/product', routes)
 

@@ -43,7 +43,7 @@ class ProductModel extends Sequelize.Model{
                 productPrice}
             )
             return {
-                success: true, message:'Product created successfully', product }
+                success: true, message:'Product created successfully', product}
         }catch(error){
             console.error('Error creating a new product:', error.message)
             throw error}
@@ -53,8 +53,7 @@ class ProductModel extends Sequelize.Model{
             const product= await ProductModel.getById(id)
             await product.destroy()
             return { success: true, message: 'Product deleted successfully'}
-        }
-        catch(error){
+        }catch(error){
             console.error('Error deleting product:', error.message)
             throw error}
     }
@@ -66,13 +65,13 @@ class ProductModel extends Sequelize.Model{
                 productCategory: newData.productCategory,
                 productPrice: newData.productPrice
             })
-            return { success: true, message: 'Product updated successfully' }
+            return {
+                success: true, message: 'Product updated successfully'}
         }catch(error){
             console.error('Error updating a product:', error.message)
             throw error}
     }
 }
-
 ProductModel.init({
     productId:{
         type: DataTypes.INTEGER,

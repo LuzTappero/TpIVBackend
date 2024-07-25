@@ -1,7 +1,7 @@
 import { validator } from "sequelize/lib/utils/validator-extras"
 import {body, validationResult} from 'express-validator'
 
-const validateProduct= [
+const validateProduct=[
     body('productName')
         .notEmpty().withMessage('Product name is required')
         .isString().withMessage('Product name must be a string')
@@ -20,9 +20,9 @@ const validateProduct= [
             }})
         if (!errors.isEmpty()){
             return res.status(400).json({errors: errors.array()})
-        }next();
+        }next()
     }
-];
+]
 
 
 export default validateProduct;
