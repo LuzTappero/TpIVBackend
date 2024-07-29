@@ -12,13 +12,15 @@ const sequelize = new Sequelize(
     dialect: process.env.DB_DIALECT,
   }
 );
-try {
-  sequelize
-    .authenticate()
-    .then(() => console.log("Successful connection to the database"))
-    .catch((err) => console.error(err));
-} catch (err) {
-  console.error(err);
-}
+try{
+  await sequelize.authenticate()
+          .then(()=>console.log('Connection to database ok')) 
+          .catch(err => console.error(err))
+  await sequelize.sync({ alter: true })
+          .then(()=> console.log('Database synchronized'))
+          .catch(err => console.error(err))
+ 
+}catch(err){console.error(err)}
+
 
 export default sequelize;
