@@ -1,23 +1,25 @@
-import express from 'express'
+import express from "express";
 const app = express();
-import routes from './src/routes/productRoutes.js'
-import errorHandler from './src/middlewares/errorHandler.js'
-import dotenv from 'dotenv'
-import morgan from 'morgan'
+import routes from "./src/routes/productRoutes.js";
+import errorHandler from "./src/middlewares/errorHandler.js";
+import dotenv from "dotenv";
+import morgan from "morgan";
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-app.use(morgan("dev"))
-dotenv.config()
+app.use(morgan("dev"));
+dotenv.config();
 
-app.use('/product', routes)
+app.use("/products", routes);
 
 app.use((req, res, next) => {
-    res.status(404).json({ message: 'Not Found' })
+  res.status(404).json({ message: "Not Found" });
 });
 
-app.use(errorHandler)
+app.use(errorHandler);
 
-const PORT= process.env.PORT
-app.listen(PORT, ()=>{console.log(`Listening on PORT ${PORT}`)})
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`Listening on PORT ${PORT}`);
+});
