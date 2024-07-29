@@ -11,9 +11,9 @@
   "type": "module",
   "name": "tp-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon /src/app.js"
   },
   "keywords": [],
   "author": "",

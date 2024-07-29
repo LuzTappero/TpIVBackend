@@ -1,13 +1,13 @@
-TP IV BACKEND - DIPLOMATURA WEB FULL STACK- ICARO 2024
-
-AUTOR: TAPPERO, MARIA LUZ
+DIPLOMATURA WEB FULL STACK- TP IV BACKEND - ICARO 2024
+AUTORA: TAPPERO, MARIA LUZ
 
 ## DESCRIPCIÓN
 API REST para gestion de productos, creada con Node.js, express y base de datos SQL. La API permite realizar operaciones de obtencion, creación, actualización y eliminación de datos. 
 
-
 ## ESTRUCTURA DEL PROYECTO
-El proyecto está modularizado en las siguientes partes: configuración de la base de datos, modelos, controlladores, rutas y middlewares.
+El proyecto está modularizado en las siguientes partes: 
+DB- archivo.sql
+SRC-archivo principal(app.js), configuración de la base de datos, modelos, controlladores, rutas y middlewares.
 
 ## INSTALACION
 1. Clona el repositorio:
@@ -19,15 +19,15 @@ El proyecto está modularizado en las siguientes partes: configuración de la ba
    
     npm install
 
-4. Crear un archivo .env para configurar las variables de entorno
+4. Descargar el archivo SQL(productsdb.sql) que se encuentra en la carpeta 'db' y crea una base de datos en tu gestor de base de datos con los scripts proporcionados. 
+
+5. Crear un archivo .env para configurar las variables de entorno
 
     DB_HOST=localhost
     DB_USER=tu-usuario
     DB_PASSWORD=tu-contraseña
     DB_NAME=nombre-de-tu-base-de-datos
     PORT=8080
-
-5. Configura la base de datos. Ejecuta los scripts necesarios para crear la base de datos y las tablas.
 
 ## USO
 
@@ -56,16 +56,16 @@ El proyecto está modularizado en las siguientes partes: configuración de la ba
    -  **Descripción:** Obtiene una lista de todos los productos.
 
 3. OBTENER PRODUCTOS POR ID
-  - **URL:** `/products/:id`
-  - **Método:** `GET`
-  - **Descripción:** Obtiene un producto por su ID.
+    - **URL:** `/products/:id`
+    - **Método:** `GET`
+    - **Descripción:** Obtiene un producto por su ID.
 
 4. ACTUALIZAR UN PRODUCTO
 
-- **URL:** `/products/:id`
-- **Método:** `PATCH`
-- **Descripción:** Actualiza un producto existente por su ID.
-- **Cuerpo de la solicitud:**
+    - **URL:** `/products/:id`
+    - **Método:** `PATCH`
+    - **Descripción:** Actualiza un producto existente por su ID.
+    - **Cuerpo de la solicitud:**
         json
         {
             "productName": "Nombre editado del producto",
@@ -74,9 +74,9 @@ El proyecto está modularizado en las siguientes partes: configuración de la ba
         }
   
 5. ELIMINAR UN PRODUCTO
-  - **URL:** `/products/:id`
-  - **Método:** `DELETE`
-  - **Descripción:** Elimina un producto existente por su ID.
+    - **URL:** `/products/:id`
+    - **Método:** `DELETE`
+    - **Descripción:** Elimina un producto existente por su ID.
 
     
 
