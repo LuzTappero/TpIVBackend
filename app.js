@@ -1,7 +1,7 @@
 import express from 'express'
 const app = express();
-import routes from './routes/productRoutes.js'
-import errorHandler from './middlewares/errorHandler.js'
+import routes from './src/routes/productRoutes.js'
+import errorHandler from './src/middlewares/errorHandler.js'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
 
